@@ -6,7 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accordéon avec des booléens</title>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        /* en vrac :
+100% 100% 100% 0 auto border-box box-sizing 
+display height flex flex none margin 
+max-width width width
+*/
+/* change le box model */
+.carrousel_parent-ecrans {
+    display: flex;/* aligne horizontalement les enfants */
+    width: 100px;/* largeur du parent */
+    box-sizing: border-box; /*change le box model */
+}
+
+.carrousel_ecran {
+    flex: none; /* empêche les enfants de s'agrandir */
+   width: 100%;/* largeur du parent pour chaque enfant */
+    max-width: 100px;/* permet de garder toute la largeur du parent */
+}
+
+.carrousel_ecran figure {
+    margin: none;/* enlève les marges par défaut */
+}
+    </style>
   </head>
+  
   <body>
     <div class="carrousel" x-data="{}">
         <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button><button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
