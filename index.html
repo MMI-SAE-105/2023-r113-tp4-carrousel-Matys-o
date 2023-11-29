@@ -7,26 +7,31 @@
     <title>Accordéon avec des booléens</title>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        /* en vrac :
-100% 100% 100% 0 auto border-box box-sizing 
-display height flex flex none margin 
-max-width width width
-*/
-/* change le box model */
+* {
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  max-width: 500px;/* image responsive, largeur maxi */
+  height: auto;/* hauteur "auto" */
+}
 .carrousel_parent-ecrans {
     display: flex;/* aligne horizontalement les enfants */
-    width: 100px;/* largeur du parent */
-    box-sizing: border-box; /*change le box model */
+    width: 100%;/* largeur du parent */
+    overflow-x: scroll; /* permet de scroller horizontalement */
+    scroll-behavior: smooth; /* animation de défilement */
+    scroll-snap-type: x mandatory; /* permet de scroller par blocs */
+
 }
 
-.carrousel_ecran {
-    flex: none; /* empêche les enfants de s'agrandir */
-   width: 100%;/* largeur du parent pour chaque enfant */
-    max-width: 100px;/* permet de garder toute la largeur du parent */
+.carrousel_ecran { 
+    width: 100%;/* largeur du parent pour chaque enfant */
+    flex: none;/* permet de garder toute la largeur du parent */
+    scroll-snap-align: start; /* aligne les enfants par blocs */
 }
 
 .carrousel_ecran figure {
-    margin: none;/* enlève les marges par défaut */
+    margin: 0px;/* enlève les marges par défaut */
 }
     </style>
   </head>
