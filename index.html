@@ -15,18 +15,19 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  background-image: url("img/Travis-Scott-Utopia-1122x607.png");
+  background-size: cover; /* image responsive, taille maxi */
+  color: #ffffff;
 }
 
 h1{ 
-  display: flex;
-  justify-content: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  color: #ffffff;
 }
 
 h2{
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  color: #ffffff;
 
 }
 
@@ -35,6 +36,7 @@ img {
   max-width: 500px;/* image responsive, largeur maxi */
   height: auto;/* hauteur "auto" */
   justify-content: center;
+  border-radius: 10%;
 }
 .carrousel_parent-ecrans {
     display: flex;/* aligne horizontalement les enfants */
@@ -42,31 +44,40 @@ img {
     overflow-x: scroll; /* permet de scroller horizontalement */
     scroll-behavior: smooth; /* animation de défilement */
     scroll-snap-type: x mandatory; /* permet de scroller par blocs */
-    max-width: 500px;/* largeur maxi */
+}
 
+div-carrousel_ecran {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 300px;
 }
 
 figcaption{
-  display: flex;
-  justify-content: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #ffffff;
 }
 
 p{
-  display: flex;
-  justify-content: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #ffffff;
 }
 .carrousel_ecran { 
     width: 100%;/* largeur du parent pour chaque enfant */
     flex: none;/* permet de garder toute la largeur du parent */
     scroll-snap-align: start; /* aligne les enfants par blocs */
+    align-items: center;
 }
 .carrousel_ecran figure {
     margin: 0px;/* enlève les marges par défaut */
 }
 .carrousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
+  max-width: 300px;
 }
 .carrousel_btn {
   position: absolute;
@@ -107,8 +118,8 @@ justify-content list-style margin none padding
 }
 
 .caroussel_liens{
-  background-color: black;
-  color: whitesmoke;
+  background-color: gainsboro;
+  color: black;
   border-radius: 8px;
   padding: 0.5rem 1rem;
   text-decoration: none;
@@ -118,8 +129,8 @@ justify-content list-style margin none padding
   
   <body>
     <h1>TEST DE CAROUSSEL</h1>
-    <h2>Les Moments fort du début de carrière du rappeur Luther</h2>
-    
+    <h2>Les Moments forts du début de carrière du rappeur Luther</h2>
+
     <div class="carrousel" x-data="{hrefCourant: '#Garçon',}">
         <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"
         @click="$refs.parent.scrollBy(-$refs.parent.clientWidth, 0)">
@@ -135,7 +146,7 @@ justify-content list-style margin none padding
             <div id="Garçon" class="carrousel_ecran">
                 <figure>
                   <a href="https://open.spotify.com/album/0pgPGBjDayWlzT8eAjjcKG?si=6IRiX7SYTT-egfs7n6qGNA">
-                    <img src="img/luther garcon.jpg" alt="image Garçon">
+                    <img src="img/luther garcon.jpg" alt="image Garçon" width="400px" height="400px">
                     </a>
                     <figcaption>Garçon</figcaption>
                     <p>Album de 8 titres</p>
@@ -144,7 +155,7 @@ justify-content list-style margin none padding
             <div id="Trame" class="carrousel_ecran">
                 <figure>
                   <a href="https://open.spotify.com/album/6goTPWVUyGTAND885NiiOZ?si=mcxSMTxVS8qsee8fyq_YMw">
-                    <img src="img/Trame par Luther.jpg" alt="image Trame">
+                    <img src="img/Trame par Luther.jpg" alt="image Trame"width="400px" height="400px">
                    </a> 
                     <figcaption>Trame</figcaption>
                     <p>Album de 8 titres</p>
@@ -153,7 +164,7 @@ justify-content list-style margin none padding
             <div id="IDD" class="carrousel_ecran">
                 <figure>
                   <a href="https://open.spotify.com/album/0ohF3ebmOwlrlhEUDUfKzx?si=6xacKGBURJ6iOfulYi32DQ">
-                    <img src="img/luther idd.jpg" alt="image IDD">
+                    <img src="img/luther idd.jpg" alt="image IDD"width="400px" height="400px">
                     </a>
                     <figcaption>IDD</figcaption>
                     <p>EP de 6 titres</p>
@@ -162,7 +173,7 @@ justify-content list-style margin none padding
             <div id="AMI" class="carrousel_ecran">
                 <figure>
                   <a href="https://open.spotify.com/album/23TDkhQVjntUeqVZMneEd5?si=xXd5QwA6QHSWohJAhnmy6Q">
-                    <img src="img/luther AMI.jpg" alt="image AMI">
+                    <img src="img/luther AMI.jpg" alt="image AMI"width="400px" height="400px">
                     </a>
                     <figcaption>AMI</figcaption>
                     <p>Single de 3 titres</p>
@@ -171,7 +182,7 @@ justify-content list-style margin none padding
             <div id="Baume" class="carrousel_ecran">
                 <figure>
                   <a href="https://open.spotify.com/album/5R65AhcuSEPiy10Mblo2bI?si=1tazAoflR0eke2UGv7d5HA">
-                    <img src="img/luther Baume.jpg" alt="image Baume">
+                    <img src="img/luther Baume.jpg" alt="image Baume"width="400px" height="400px">
                     </a>
                     <figcaption>Baume</figcaption>
                     <p>Single en feat avec Rouhna et LUCASV</p>
